@@ -81,9 +81,7 @@ export const MEMPELAI = [
 export const PENGUNDANG = {
   utama: "Baharuddin & Halipa",
   turut: [
-    { nama: "Alm. Sarabu",       keterangan: "& Almh. Sakinang" },
-    { nama: "Bombo",              keterangan: "& Almh. Sayu" },
-    { nama: "Kedua Mempelai",    keterangan: "" },
+  ,
   ],
 };
 
@@ -93,8 +91,13 @@ export const PENGUNDANG = {
 
 export const BANKS = [
   {
-    bank:  "Nama Bank",
-    norek: "XXXX-XXXX-XXXX",
+    bank:  "BCA",
+    norek: "7970592100",
+    atas:  "SULFANA",
+  },
+    {
+    bank:  "DANA",
+    norek: "081340727775",
     atas:  "SULFANA",
   },
 ];
