@@ -291,7 +291,7 @@ function App() {
             {/* Badik divider kecil */}
             <BadikDivider />
 
-            <p className="cover-date">08 · Juni · 2026</p>
+            <p className="cover-date">09 · Juni · 2026</p>
             <p className="cover-location">Borong Leko, Kab. Gowa</p>
 
             <div className="cover-to-wrapper">
@@ -379,7 +379,7 @@ function App() {
           <p className="cover-couple">{WEDDING.namasingkat1} &amp; {WEDDING.namasingkat2}</p>
           <div className="cover-divider" />
           <BadikDivider />
-          <p className="cover-date">08 · Juni · 2026</p>
+          <p className="cover-date">09 · Juni · 2026</p>
           <p className="cover-location">Borong Leko, Kab. Gowa</p>
           <div className="scroll-cue">
             <div className="scroll-dot" />

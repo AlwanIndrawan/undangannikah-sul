@@ -20,7 +20,7 @@ export const WEDDING = {
   ibu2:  "Ibu Nursiah",
 
   // Akad: Senin 08 Juni (di lokasi mempelai wanita)
-  tanggal: "2026-06-08",
+  tanggal: "2026-06-09",
 
   akad: {
     tanggal: "Senin, 08 Juni 2026",

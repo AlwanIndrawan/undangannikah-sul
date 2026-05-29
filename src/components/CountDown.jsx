@@ -4,7 +4,7 @@ import { SectionLabel } from './Decorations';
 
 function CountDown() {
   const calculateTime = () => {
-    const target = new Date(`${WEDDING.tanggal}T08:00:00`);
+    const target = new Date(`${WEDDING.tanggal}T09:00:00`);
     const now    = new Date();
     const diff   = target - now;
 
