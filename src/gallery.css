@@ -18,7 +18,7 @@
   background: linear-gradient(
     to var(--dir, right),
     transparent,
-    rgba(201, 168, 76, 0.3)
+    rgba(201, 166, 107, 0.3)
   );
 }
 
@@ -27,17 +27,17 @@
 }
 
 .gallery-header-badge {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Jost', sans-serif;
   font-size: 9px;
   font-weight: 600;
   letter-spacing: 0.35em;
   text-transform: uppercase;
-  color: rgba(201, 168, 76, 0.8);
+  color: rgba(201, 166, 107, 0.8);
   white-space: nowrap;
   padding: 6px 16px;
-  border: 1px solid rgba(201, 168, 76, 0.2);
+  border: 1px solid rgba(201, 166, 107, 0.2);
   border-radius: 999px;
-  background: rgba(201, 168, 76, 0.05);
+  background: rgba(201, 166, 107, 0.05);
 }
 
 /* ── Grid utama ── */
@@ -56,7 +56,7 @@
   overflow: hidden;
   border-radius: 12px;
   background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(201, 168, 76, 0.12);
+  border: 1px solid rgba(201, 166, 107, 0.12);
   transition:
     transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
     box-shadow 0.4s ease,
@@ -70,9 +70,9 @@
 .gallery-item--real:hover {
   transform: translateY(-4px) scale(1.01);
   box-shadow:
-    0 16px 40px rgba(0, 0, 0, 0.5),
-    0 0 20px rgba(201, 168, 76, 0.12);
-  border-color: rgba(201, 168, 76, 0.35);
+    0 16px 40px rgba(139, 75, 87, 0.18),
+    0 0 20px rgba(201, 166, 107, 0.12);
+  border-color: rgba(201, 166, 107, 0.35);
   z-index: 2;
 }
 
@@ -120,7 +120,7 @@
 
 .gallery-zoom-icon {
   font-size: 22px;
-  color: rgba(201, 168, 76, 0.9);
+  color: rgba(201, 166, 107, 0.9);
   line-height: 1;
   font-family: serif;
   font-style: normal;
@@ -133,8 +133,8 @@
   right: 10px;
   width: 20px;
   height: 20px;
-  border-top: 1.5px solid rgba(201, 168, 76, 0.6);
-  border-right: 1.5px solid rgba(201, 168, 76, 0.6);
+  border-top: 1.5px solid rgba(201, 166, 107, 0.6);
+  border-right: 1.5px solid rgba(201, 166, 107, 0.6);
   border-radius: 0 4px 0 0;
   opacity: 0;
   transition: opacity 0.3s ease;
@@ -163,11 +163,11 @@
 }
 
 .gallery-placeholder-label {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Jost', sans-serif;
   font-size: 9px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(201, 168, 76, 0.4);
+  color: rgba(201, 166, 107, 0.4);
 }
 
 /* ── Hint teks ── */
@@ -178,14 +178,14 @@
   text-align: center;
   letter-spacing: 0.04em;
   line-height: 1.8;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Jost', sans-serif;
 }
 
 .gallery-hint code {
   background: rgba(255,255,255,0.06);
   padding: 2px 7px;
   border-radius: 5px;
-  color: rgba(201, 168, 76, 0.7);
+  color: rgba(201, 166, 107, 0.7);
   font-size: 11px;
 }
 
@@ -197,7 +197,7 @@
   position: fixed;
   inset: 0;
   z-index: 600;
-  background: rgba(5, 4, 10, 0.97);
+  background: rgba(70, 36, 46, 0.97);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -228,17 +228,17 @@
   object-fit: contain;
   border-radius: 6px;
   box-shadow:
-    0 32px 80px rgba(0, 0, 0, 0.8),
-    0 0 0 1px rgba(201, 168, 76, 0.12);
+    0 32px 80px rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(201, 166, 107, 0.12);
 }
 
 .lb-close {
   position: fixed;
   top: 20px;
   right: 24px;
-  background: rgba(201, 168, 76, 0.08);
-  border: 1px solid rgba(201, 168, 76, 0.25);
-  color: rgba(201, 168, 76, 0.7);
+  background: rgba(201, 166, 107, 0.08);
+  border: 1px solid rgba(201, 166, 107, 0.25);
+  color: rgba(201, 166, 107, 0.7);
   font-size: 16px;
   width: 40px;
   height: 40px;
@@ -253,17 +253,17 @@
 }
 
 .lb-close:hover {
-  background: rgba(201, 168, 76, 0.18);
-  color: var(--gold, #c9a84c);
+  background: rgba(201, 166, 107, 0.18);
+  color: var(--gold);
 }
 
 .lb-nav {
   position: fixed;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(201, 168, 76, 0.06);
-  border: 1px solid rgba(201, 168, 76, 0.2);
-  color: rgba(201, 168, 76, 0.6);
+  background: rgba(201, 166, 107, 0.06);
+  border: 1px solid rgba(201, 166, 107, 0.2);
+  color: rgba(201, 166, 107, 0.6);
   font-size: 32px;
   width: 52px;
   height: 52px;
@@ -279,8 +279,8 @@
 }
 
 .lb-nav:hover {
-  background: rgba(201, 168, 76, 0.15);
-  color: var(--gold, #c9a84c);
+  background: rgba(201, 166, 107, 0.15);
+  color: var(--gold);
 }
 
 .lb-nav--left  { left: 20px; }
@@ -297,10 +297,10 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Jost', sans-serif;
   font-size: 12px;
   font-weight: 600;
-  color: rgba(201, 168, 76, 0.4);
+  color: rgba(201, 166, 107, 0.4);
   letter-spacing: 0.1em;
 }
 

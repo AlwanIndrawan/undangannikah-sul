@@ -4,11 +4,11 @@
 // ============================================================
 
 export const WEDDING = {
-  mempelai1: "Sulfana",
-  mempelai2: "Nuraeni",
+  mempelai1: "pempeng",
+  mempelai2: "ulfa",
 
-  namasingkat1: "Sul",
-  namasingkat2: "Emi",
+  namasingkat1: "pempeng",
+  namasingkat2: "uppa",
 
   gelar1: "",
   gelar2: "S.Pd., Gr",
@@ -20,16 +20,16 @@ export const WEDDING = {
   ibu2:  "Ibu Nursiah",
 
   // Akad: Senin 08 Juni (di lokasi mempelai wanita)
-  tanggal: "2026-06-09",
+  tanggal: "2026-09-18",
 
   akad: {
-    tanggal: "Senin, 08 Juni 2026",
+    tanggal: "Senin, 18 September 2026",
     waktu:   "10:00 WITA – selesai",
   },
 
   // Resepsi: Selasa 09 Juni (di lokasi mempelai lelaki)
   resepsi: {
-    tanggal: "Selasa, 09 Juni 2026",
+    tanggal: "Selasa, 19 September 2026",
     waktu:   "10:00 WITA – selesai (Acara Siang)",
   },
 
@@ -39,7 +39,7 @@ export const WEDDING = {
 
   mapsUrl: "https://maps.google.com/?q=Rappolemba+Tompobulu+Gowa+Sulawesi+Selatan",
 
-  batasRsvp: "1 Juni 2026",
+  batasRsvp: "18 September 2026",
 
   namaUndangan: "Bapak/Ibu/Saudara(i)",
 };
@@ -80,8 +80,14 @@ export const MEMPELAI = [
 
 export const PENGUNDANG = {
   utama: "Baharuddin & Halipa",
-  turut: [
-  ,
+  turut: [{ nama: "Dr. Azis Masang, S.Ag., M.Si.", keterangan: "Dg. Naba & Ny." },
+    { nama: "Hartono Hamzah, S.Pd., Gr", keterangan: "& Ny." },
+    { nama: "Muhammad Nur, S.H", keterangan: "" },
+    { nama: "Muh. Saleh", keterangan: "& Ny." },
+    { nama: "Mansur Masang Dg. Naro", keterangan: "& Ny." },
+    { nama: "Amri, S.H.I., S.Pd.I", keterangan: "& Ny." },
+    { nama: "Ismail Hamzah", keterangan: "& Ny." },
+    { nama: "Kedua Mempelai", keterangan: "" },
   ],
 };
 

@@ -13,23 +13,11 @@ import RSVPForm          from './components/RSVPForm';
 import GuestBook         from './components/GuestBook';
 import Gallery           from './components/Gallery';
 
-import {
-  BotanicalDivider,
-  BugisDividerLine,
-  PulseRings,
-  CornerAccent,
-  SulapaEppa,
-  FloatingParticles,
-  PallullunganSmall,
-  LontaraPattern,
-  PinisiBackground,
-  KerisOrnament,
-  BadikDivider,
-} from './components/Decorations';
+import { FallingPetals } from './components/Decorations';
 
-/* ════════════════════════════════════════════════
+/* ════════════════════════════════════════════════════════════
    SCROLL REVEAL
-════════════════════════════════════════════════ */
+   ════════════════════════════════════════════════════════════ */
 
 function useScrollReveal(isOpen) {
   useEffect(() => {
@@ -62,36 +50,17 @@ function Reveal({ children, anim = 'up', delay = '0ms', style = {}, className = 
   );
 }
 
-/* ════════════════════════════════════════════════
+/* ════════════════════════════════════════════════════════════
    LOCAL COMPONENTS
-════════════════════════════════════════════════ */
+   ════════════════════════════════════════════════════════════ */
 
-function GoldDivider() { return <BotanicalDivider />; }
-function SectionDivider() { return <BugisDividerLine />; }
-
-/* Sudut Bugis dengan aksen keris */
-function BugisCorner({ style }) {
-  return (
-    <svg viewBox="0 0 100 100" fill="none"
-      style={{ position: 'absolute', pointerEvents: 'none', ...style }}
-      aria-hidden="true">
-      <path d="M6 6 L6 42" stroke="rgba(201,146,42,0.3)" strokeWidth="1" />
-      <path d="M6 6 L42 6" stroke="rgba(201,146,42,0.3)" strokeWidth="1" />
-      <path d="M14 14 L14 36" stroke="rgba(201,146,42,0.15)" strokeWidth="0.6" />
-      <path d="M14 14 L36 14" stroke="rgba(201,146,42,0.15)" strokeWidth="0.6" />
-      <polygon points="6,6 12,6 6,12" fill="rgba(201,146,42,0.2)" />
-      <circle cx="6" cy="6" r="2" fill="rgba(201,146,42,0.5)" />
-      {/* Aksen mata keris kecil di sudut */}
-      <path d="M20 20 L26 14 L28 16 L22 22 Z" fill="rgba(201,146,42,0.15)" stroke="rgba(201,146,42,0.3)" strokeWidth="0.5"/>
-    </svg>
-  );
-}
+function SectionDivider() { return <div className="divider" />; }
 
 /* Style shortcuts */
-const TG = { color: 'var(--gold)' };
+const TG = { color: 'var(--rose)' };
 const T2 = { color: 'var(--text-secondary)' };
 
-// Taruh setelah baris "const T2 = ..." (sekitar baris 88)
+// Nama tamu dari URL ?to=...
 function useGuestName() {
   return useMemo(() => {
     const params = new URLSearchParams(window.location.search);
@@ -111,9 +80,9 @@ const NAV_ITEMS = [
   { id: 'pesan',    label: 'Ucapan',   icon: '🌸' },
 ];
 
-/* ════════════════════════════════════════════════
+/* ════════════════════════════════════════════════════════════
    AUTO SCROLL
-════════════════════════════════════════════════ */
+   ════════════════════════════════════════════════════════════ */
 
 function useAutoScroll(isOpen) {
   const rafRef       = useRef(null);
@@ -177,7 +146,6 @@ function useAutoScroll(isOpen) {
 function App() {
   const guestName = useGuestName();
   const [activeSection, setActiveSection] = useState('cover');
-  const [storyIndex,    setStoryIndex]    = useState(0);
   const [copiedBank,    setCopiedBank]    = useState('');
   const [toast,         setToast]         = useState('');
   const [menuOpen,      setMenuOpen]      = useState(false);
@@ -231,50 +199,16 @@ function App() {
     setPlayMusic(true);
   };
 
-  /* ══════════════════════════════════════════════
+  /* ══════════════════════════════════════════════════════════
      COVER PAGE
-  ══════════════════════════════════════════════ */
+     ══════════════════════════════════════════════════════════ */
   if (!isOpen) {
     return (
       <>
-        <FloatingParticles />
-        <div style={{
-          position: 'fixed', inset: 0,
-          display: 'flex', flexDirection: 'column',
-          alignItems: 'center', justifyContent: 'center',
-          textAlign: 'center', padding: '24px',
-        }}>
-          <div className="cover-photo-bg cover-photo-bg--groom" />
-          <div className="cover-photo-overlay" />
-          <div className="cover-shimmer-sweep" />
-          <div className="cover-shimmer-sweep cover-shimmer-sweep--2" />
-          <div className="cover-glow-tl" />
-          <div className="cover-glow-br" />
-          <div className="cover-weave-pattern" />
-
-          <LontaraPattern style={{ top: '8%', left: '5%', right: '5%' }} />
-
-          {/* Ornamen keris di sudut kiri bawah */}
-          <KerisOrnament style={{ bottom: '8%', left: '4%', width: 60, height: 90, opacity: 0.35 }} />
-          {/* Ornamen keris di sudut kanan bawah — cermin */}
-          <KerisOrnament style={{ bottom: '8%', right: '4%', width: 60, height: 90, opacity: 0.35, transform: 'scaleX(-1)' }} />
-
-          <div className="cover-border" />
-          <div className="cover-corner tl" /><div className="cover-corner tr" />
-          <div className="cover-corner bl" /><div className="cover-corner br" />
-
-          <PulseRings />
-
-          <div className="cover-inner">
-            {/* Pallullungang */}
-            <div className="pallullungang">
-              <div className="pall-t1 pall-tier" />
-              <div className="pall-t2 pall-tier" />
-              <div className="pall-t3 pall-tier" />
-              <div className="pall-pole" />
-            </div>
-
-            <p className="cover-badge">The Wedding of</p>
+        <FallingPetals />
+        <div className="cover-page">
+          <div className="cover-card">
+            <p className="cover-eyebrow">The Wedding of</p>
 
             <div className="cover-monogram">
               {WEDDING.namasingkat1[0]}
@@ -288,9 +222,6 @@ function App() {
 
             <div className="cover-divider" />
 
-            {/* Badik divider kecil */}
-            <BadikDivider />
-
             <p className="cover-date">09 · Juni · 2026</p>
             <p className="cover-location">Borong Leko, Kab. Gowa</p>
 
@@ -299,15 +230,9 @@ function App() {
               <p className="cover-to-name">{guestName}</p>
             </div>
 
-            <button className="btn-open-invite" onClick={handleOpenInvite}>
+            <button className="btn-open" onClick={handleOpenInvite}>
               Buka Undangan
             </button>
-
-            <div className="scroll-cue" style={{ marginTop: 28 }}>
-              <div className="scroll-dot" />
-              <div className="scroll-dot" />
-              <div className="scroll-dot" />
-            </div>
           </div>
         </div>
         <MusicPlayer triggerPlay={false} />
@@ -315,12 +240,12 @@ function App() {
     );
   }
 
-  /* ══════════════════════════════════════════════
+  /* ══════════════════════════════════════════════════════════
      MAIN CONTENT
-  ══════════════════════════════════════════════ */
+     ══════════════════════════════════════════════════════════ */
   return (
     <>
-      <FloatingParticles />
+      <FallingPetals />
 
       {/* ── TOP NAV ── */}
       <nav className="topbar">
@@ -353,50 +278,23 @@ function App() {
 
       {/* ══════════════ HERO ═════════════════════════════════ */}
       <section id="cover" style={{ textAlign: 'center' }}>
-        <div className="cover-bg-silk" />
-        <div className="cover-weave-pattern" />
-        <LontaraPattern style={{ top: '8%', left: '5%', right: '5%' }} />
-        <div className="cover-border" />
-        <div className="cover-corner tl" /><div className="cover-corner tr" />
-        <div className="cover-corner bl" /><div className="cover-corner br" />
-        <PulseRings />
-
-        {/* Keris dekoratif background hero */}
-        <KerisOrnament style={{ bottom: '5%', left: '3%', width: 55, height: 85, opacity: 0.2 }} />
-        <KerisOrnament style={{ bottom: '5%', right: '3%', width: 55, height: 85, opacity: 0.2, transform: 'scaleX(-1)' }} />
-
-        <div className="cover-inner">
-          <div className="pallullungang">
-            <div className="pall-t1 pall-tier" />
-            <div className="pall-t2 pall-tier" />
-            <div className="pall-t3 pall-tier" />
-            <div className="pall-pole" />
-          </div>
-          <p className="cover-badge">The Wedding of</p>
-          <div className="cover-monogram">
-            {WEDDING.namasingkat1[0]}<span className="slash">&</span>{WEDDING.namasingkat2[0]}
-          </div>
-          <p className="cover-couple">{WEDDING.namasingkat1} &amp; {WEDDING.namasingkat2}</p>
-          <div className="cover-divider" />
-          <BadikDivider />
-          <p className="cover-date">09 · Juni · 2026</p>
-          <p className="cover-location">Borong Leko, Kab. Gowa</p>
-          <div className="scroll-cue">
-            <div className="scroll-dot" />
-            <div className="scroll-dot" />
-            <div className="scroll-dot" />
-          </div>
+        <p className="cover-badge">The Wedding of</p>
+        <div className="cover-monogram">
+          {WEDDING.namasingkat1[0]}<span className="slash">&</span>{WEDDING.namasingkat2[0]}
+        </div>
+        <p className="cover-couple">{WEDDING.namasingkat1} &amp; {WEDDING.namasingkat2}</p>
+        <div className="cover-divider" />
+        <p className="cover-date">09 · Juni · 2026</p>
+        <p className="cover-location">Borong Leko, Kab. Gowa</p>
+        <div className="scroll-cue">
+          <div className="scroll-dot" />
+          <div className="scroll-dot" />
+          <div className="scroll-dot" />
         </div>
       </section>
 
       {/* ══════════════ MEMPELAI ═════════════════════════════ */}
       <section id="mempelai">
-        <PinisiBackground />
-        <SulapaEppa style={{ width: 300, height: 300, bottom: -40, right: -40, opacity: 1 }} />
-        <BugisCorner style={{ top: 20, left: 20, width: 65, height: 65 }} />
-        {/* Keris aksen kiri */}
-        <KerisOrnament style={{ top: '12%', left: '1%', width: 42, height: 65, opacity: 0.18 }} />
-
         <Reveal anim="down">
           <p className="subtitle">Bismillahirrahmanirrahim</p>
         </Reveal>
@@ -405,13 +303,13 @@ function App() {
         <Reveal anim="up" delay="350ms">
           <div style={{
             maxWidth: 480, textAlign: 'center', marginTop: 24,
-            padding: '20px 20px', border: '0.5px solid rgba(201,146,42,0.15)',
-            background: 'rgba(255,255,255,0.025)',
+            padding: '20px 20px', border: '0.5px solid rgba(201,166,107,0.3)',
+            background: 'rgba(255,253,251,0.6)', borderRadius: 8,
           }}>
-            <p style={{ fontFamily: "'Cinzel Decorative',serif", fontSize: 10, letterSpacing: '0.35em', color: 'var(--gold)', marginBottom: 8 }}>
+            <p style={{ fontFamily: 'var(--font-display)', fontSize: 12, letterSpacing: '0.3em', color: 'var(--rose)', marginBottom: 8 }}>
               Assalamu'alaikum Warahmatullahi Wabarakatuh
             </p>
-            <p style={{ ...T2, fontSize: 13, lineHeight: 1.9, fontFamily: 'Poppins,sans-serif' }}>
+            <p style={{ ...T2, fontSize: 13, lineHeight: 1.9, fontFamily: 'var(--font-body)' }}>
               Dengan penuh rasa syukur, kami mengundang Bapak/Ibu/Saudara(i) untuk hadir dan mendoakan pernikahan kami.
             </p>
           </div>
@@ -424,9 +322,9 @@ function App() {
           <p style={{
             ...T2, maxWidth: '440px', textAlign: 'center',
             fontSize: '13px', lineHeight: 1.9, margin: '12px 0 28px',
-            fontFamily: 'Poppins, sans-serif', fontStyle: 'italic',
+            fontFamily: 'var(--font-body)', fontStyle: 'italic',
           }}>
-            "Siri' na Pacce': Dua Jiwa, Satu Kehormatan"
+            "Dua Jiwa, Satu Kehormatan"
           </p>
         </Reveal>
         <Reveal anim="fade" delay="200ms">
@@ -434,8 +332,6 @@ function App() {
             <SectionDivider />
           </div>
         </Reveal>
-
-        <LontaraPattern style={{ bottom: '10%', left: '5%', right: '5%', opacity: 0.6 }} />
 
         <Reveal anim="zoom" delay="250ms" style={{ width: '100%', alignItems: 'stretch' }}>
           <div className="bridegroom-flower-wrap">
@@ -446,12 +342,6 @@ function App() {
 
       {/* ══════════════ INFO ACARA ════════════════════════════ */}
       <section id="info">
-        <PinisiBackground />
-        <SulapaEppa style={{ width: 280, height: 280, top: -30, left: -30, opacity: 1 }} />
-        <BugisCorner style={{ top: 20, right: 20, width: 65, height: 65, transform: 'scaleX(-1)' }} />
-        {/* Keris aksen kanan */}
-        <KerisOrnament style={{ top: '10%', right: '1%', width: 42, height: 65, opacity: 0.18, transform: 'scaleX(-1)' }} />
-
         <Reveal anim="down">
           <p className="subtitle">Insya Allah akan dilaksanakan</p>
         </Reveal>
@@ -474,9 +364,6 @@ function App() {
           <div className="event-cards">
             {/* AKAD — Senin 08 Juni */}
             <div className="event-card">
-              <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 6 }}>
-                <PallullunganSmall scale={0.65} />
-              </div>
               <div className="event-card-type">Akad Nikah</div>
               <div className="event-card-date">08</div>
               <div className="event-card-month">Juni 2026</div>
@@ -486,7 +373,6 @@ function App() {
 
             {/* RESEPSI — Selasa 09 Juni */}
             <div className="event-card event-card--groom">
-              <div style={{ fontSize: 18, marginBottom: 8, opacity: 0.7 }}>⚔</div>
               <div className="event-card-type">Resepsi</div>
               <div className="event-card-date">09</div>
               <div className="event-card-month">Juni 2026</div>
@@ -512,10 +398,6 @@ function App() {
 
       {/* ══════════════ KISAH CINTA ══════════════════════════ */}
       <section id="story">
-        <PinisiBackground />
-        <BugisCorner style={{ bottom: 20, right: 20, width: 65, height: 65, transform: 'rotate(180deg)' }} />
-        <SulapaEppa style={{ width: 250, height: 250, top: -30, right: -30, opacity: 1 }} />
-
         <Reveal anim="down"><p className="subtitle">Perjalanan Kami</p></Reveal>
         <Reveal anim="up" delay="100ms"><h2>Kisah Cinta</h2></Reveal>
         <Reveal anim="fade" delay="200ms">
@@ -544,10 +426,6 @@ function App() {
 
       {/* ══════════════ GALERI ════════════════════════════════ */}
       <section id="gallery">
-        <PinisiBackground />
-        <SulapaEppa style={{ width: 300, height: 300, top: -40, right: -40, opacity: 1 }} />
-        <BugisCorner style={{ top: 20, left: 20, width: 65, height: 65 }} />
-
         <Reveal anim="down"><p className="subtitle">Galeri Foto</p></Reveal>
         <Reveal anim="up" delay="100ms"><h2>Momen Berharga</h2></Reveal>
         <Reveal anim="fade" delay="200ms">
@@ -562,7 +440,6 @@ function App() {
 
       {/* ══════════════ RSVP ══════════════════════════════════ */}
       <section id="rsvp">
-        <PinisiBackground />
         <Reveal anim="down"><p className="subtitle">Konfirmasi Kehadiran</p></Reveal>
         <Reveal anim="up" delay="100ms"><h2>RSVP</h2></Reveal>
         <Reveal anim="fade" delay="200ms">
@@ -571,7 +448,7 @@ function App() {
           </div>
         </Reveal>
         <Reveal anim="up" delay="200ms">
-          <p style={{ ...T2, maxWidth: '420px', textAlign: 'center', fontSize: '13px', lineHeight: 1.85, marginBottom: '28px', fontFamily: 'Poppins,sans-serif' }}>
+          <p style={{ ...T2, maxWidth: '420px', textAlign: 'center', fontSize: '13px', lineHeight: 1.85, marginBottom: '28px', fontFamily: 'var(--font-body)' }}>
             Kehadiranmu adalah kebahagiaan terbesar kami. 🌸<br />
             Mohon konfirmasi paling lambat <strong style={TG}>{WEDDING.batasRsvp}</strong>.
           </p>
@@ -583,9 +460,6 @@ function App() {
 
       {/* ══════════════ AMPLOP DIGITAL ════════════════════════ */}
       <section id="amplop">
-        <PinisiBackground />
-        <SulapaEppa style={{ width: 350, height: 350, bottom: -60, right: -60, opacity: 1 }} />
-
         <Reveal anim="down"><p className="subtitle">Amplop Digital</p></Reveal>
         <Reveal anim="up" delay="100ms"><h2>Hadiah &amp; Doa</h2></Reveal>
         <Reveal anim="fade" delay="200ms">
@@ -594,7 +468,7 @@ function App() {
           </div>
         </Reveal>
         <Reveal anim="up" delay="200ms">
-          <p style={{ ...T2, maxWidth: '440px', textAlign: 'center', fontSize: '13px', lineHeight: 1.85, marginBottom: '28px', fontFamily: 'Poppins,sans-serif' }}>
+          <p style={{ ...T2, maxWidth: '440px', textAlign: 'center', fontSize: '13px', lineHeight: 1.85, marginBottom: '28px', fontFamily: 'var(--font-body)' }}>
             Jika kamu berniat memberikan hadiah, kami sangat berterima kasih.<br />
             Doamu pun sudah lebih dari cukup. 🙏
           </p>
@@ -605,22 +479,22 @@ function App() {
             <Reveal key={b.bank} anim="left" delay={`${i * 120}ms`} style={{ width: '100%' }}>
               <div className="bank-card">
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 }}>
-                  <span style={{ ...TG, fontSize: '11px', letterSpacing: '0.25em', fontWeight: 700, fontFamily: 'Poppins,sans-serif', textTransform: 'uppercase' }}>
+                  <span style={{ ...TG, fontSize: '11px', letterSpacing: '0.25em', fontWeight: 700, fontFamily: 'var(--font-body)', textTransform: 'uppercase' }}>
                     {b.bank}
                   </span>
                   <span style={{
-                    fontSize: 9, color: 'var(--maroon-dark)',
-                    background: 'linear-gradient(135deg,var(--gold),var(--gold-bright))',
-                    padding: '3px 12px', borderRadius: '2px', letterSpacing: '0.12em',
-                    fontWeight: 600, fontFamily: 'Poppins,sans-serif',
+                    fontSize: 9, color: 'var(--white)',
+                    background: 'linear-gradient(135deg,var(--gold),#E8C79A)',
+                    padding: '3px 12px', borderRadius: '30px', letterSpacing: '0.12em',
+                    fontWeight: 600, fontFamily: 'var(--font-body)',
                   }}>Transfer</span>
                 </div>
                 <p style={{
-                  fontFamily: "'Cinzel',serif", fontSize: 'clamp(18px,5vw,26px)',
-                  letterSpacing: '0.12em', color: 'var(--champagne)', marginBottom: 4,
-                  textShadow: '0 0 12px rgba(201,146,42,0.2)',
+                  fontFamily: 'var(--font-serif)', fontSize: 'clamp(18px,5vw,26px)',
+                  letterSpacing: '0.08em', color: 'var(--deep-rose)', marginBottom: 4,
+                  fontWeight: 600,
                 }}>{b.norek}</p>
-                <p style={{ ...T2, fontSize: 12, marginBottom: 16, fontFamily: 'Poppins,sans-serif' }}>
+                <p style={{ ...T2, fontSize: 12, marginBottom: 16, fontFamily: 'var(--font-body)' }}>
                   a.n. {b.atas}
                 </p>
                 <button className="btn-outline" style={{ fontSize: 11 }}
@@ -635,8 +509,7 @@ function App() {
 
       {/* ══════════════ BUKU TAMU ════════════════════════════ */}
       <section id="pesan">
-        <PinisiBackground />
-        <Reveal anim="down"><p className="subtitle">Buku Tamu Adat</p></Reveal>
+        <Reveal anim="down"><p className="subtitle">Buku Tamu</p></Reveal>
         <Reveal anim="up" delay="100ms"><h2>Ucapan &amp; Doa</h2></Reveal>
         <Reveal anim="fade" delay="200ms">
           <div style={{ display: 'flex', justifyContent: 'center', margin: '16px 0' }}>
@@ -644,7 +517,7 @@ function App() {
           </div>
         </Reveal>
         <Reveal anim="up" delay="200ms">
-          <p style={{ ...T2, maxWidth: '440px', textAlign: 'center', fontSize: '13px', lineHeight: 1.85, marginBottom: '28px', fontFamily: 'Poppins,sans-serif' }}>
+          <p style={{ ...T2, maxWidth: '440px', textAlign: 'center', fontSize: '13px', lineHeight: 1.85, marginBottom: '28px', fontFamily: 'var(--font-body)' }}>
             Tinggalkan ucapan dan doa terbaikmu untuk kami. 💌<br />
             Setiap kata akan kami simpan sebagai kenangan indah.
           </p>
@@ -655,16 +528,7 @@ function App() {
       </section>
 
       {/* ══════════════ HORMAT KAMI ═══════════════════════════ */}
-      <section id="hormat" style={{ background: 'rgba(30,5,5,0.5)' }}>
-        <PinisiBackground />
-        <BugisCorner style={{ top: 20, left: 20, width: 65, height: 65 }} />
-        <BugisCorner style={{ bottom: 20, right: 20, width: 65, height: 65, transform: 'rotate(180deg)' }} />
-        <SulapaEppa style={{ width: 280, height: 280, top: '50%', left: '50%', transform: 'translate(-50%,-50%)', opacity: 1 }} />
-
-        {/* Keris kiri-kanan di section hormat */}
-        <KerisOrnament style={{ bottom: '8%', left: '3%', width: 52, height: 78, opacity: 0.28 }} />
-        <KerisOrnament style={{ bottom: '8%', right: '3%', width: 52, height: 78, opacity: 0.28, transform: 'scaleX(-1)' }} />
-
+      <section id="hormat">
         <Reveal anim="down"><p className="subtitle">Hormat Kami Yang Mengundang</p></Reveal>
         <Reveal anim="fade" delay="150ms">
           <div style={{ display: 'flex', justifyContent: 'center', margin: '8px 0 24px' }}>
@@ -675,12 +539,6 @@ function App() {
         <Reveal anim="up" delay="200ms">
           <p className="hormat-utama">{PENGUNDANG.utama}</p>
         </Reveal>
-
-        {/* <Reveal anim="fade" delay="250ms">
-          <p style={{ ...T2, fontSize: 9, letterSpacing: '0.4em', textTransform: 'uppercase', fontFamily: 'var(--font-display)', color: 'var(--gold)', marginBottom: 16, textAlign: 'center' }}>
-            Turut Mengundang
-          </p>
-        </Reveal> */}
 
         <Reveal anim="zoom" delay="300ms" style={{ width: '100%' }}>
           <div className="turut-grid turut-grid--groom">
@@ -694,11 +552,11 @@ function App() {
         </Reveal>
 
         <Reveal anim="up" delay="400ms">
-          <div style={{ marginTop: 32, padding: '20px 0', borderTop: '0.5px solid rgba(201,146,42,0.2)', textAlign: 'center', maxWidth: 480, width: '100%' }}>
-            <p style={{ fontFamily: 'var(--font-display)', fontSize: 9, letterSpacing: '0.35em', color: 'var(--gold)', marginBottom: 8 }}>
+          <div style={{ marginTop: 32, padding: '20px 0', borderTop: '0.5px solid rgba(201,166,107,0.3)', textAlign: 'center', maxWidth: 480, width: '100%' }}>
+            <p style={{ fontFamily: 'var(--font-display)', fontSize: 11, letterSpacing: '0.3em', color: 'var(--rose)', marginBottom: 8 }}>
               Wassalamu'alaikum Warahmatullahi Wabarakatuh
             </p>
-            <p style={{ ...T2, fontSize: 12, fontStyle: 'italic', lineHeight: 1.9, fontFamily: 'Poppins,sans-serif' }}>
+            <p style={{ ...T2, fontSize: 12, fontStyle: 'italic', lineHeight: 1.9, fontFamily: 'var(--font-body)' }}>
               Atas kehadiran dan do'a restu Bapak/Ibu/Saudara(i),<br />
               kami ucapkan terima kasih
             </p>
@@ -709,24 +567,16 @@ function App() {
       {/* ══════════════ FOOTER ════════════════════════════════ */}
       <footer className="footer-section">
         <Reveal anim="zoom">
-          <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 28, opacity: 0.35 }}>
-            {/* Sulapa Eppa + keris kecil di footer */}
-            <svg viewBox="0 0 80 60" width="60" height="45" fill="none">
-              <polygon points="40,6 74,30 40,54 6,30" stroke="rgba(201,146,42,0.8)" strokeWidth="1" fill="none" />
-              <polygon points="40,14 66,30 40,46 14,30" stroke="rgba(201,146,42,0.5)" strokeWidth="0.7" fill="none" />
-              <circle cx="40" cy="30" r="3" fill="rgba(201,146,42,0.6)" />
-              {/* Silang keris kecil */}
-              <line x1="28" y1="18" x2="52" y2="42" stroke="rgba(201,146,42,0.4)" strokeWidth="0.8" />
-              <line x1="52" y1="18" x2="28" y2="42" stroke="rgba(201,146,42,0.4)" strokeWidth="0.8" />
-            </svg>
+          <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 28 }}>
+            <span style={{ fontFamily: 'var(--font-script)', fontSize: 44, color: 'var(--gold)', lineHeight: 1 }}>&amp;</span>
           </div>
         </Reveal>
 
         <Reveal anim="up" delay="100ms">
           <p style={{
-            fontFamily: "'Cormorant Garamond',serif",
-            fontSize: 'clamp(13px,3vw,16px)',
-            fontStyle: 'italic', color: 'rgba(245,223,160,0.7)',
+            fontFamily: 'var(--font-display)',
+            fontSize: 'clamp(14px,3vw,17px)',
+            fontStyle: 'italic', color: 'var(--deep-rose)',
             lineHeight: 2, maxWidth: 500, margin: '0 auto 12px',
             textAlign: 'center', padding: '0 16px',
           }}>
@@ -734,23 +584,24 @@ function App() {
             istri-istri dari jenismu sendiri, supaya kamu cenderung dan merasa
             tenteram kepadanya..."
           </p>
-          <p style={{ fontSize: '10px', color: 'rgba(201,146,42,0.4)', letterSpacing: '0.2em', marginBottom: 28, textAlign: 'center', fontFamily: 'Poppins,sans-serif' }}>
+          <p style={{ fontSize: '10px', color: 'var(--rose)', letterSpacing: '0.2em', marginBottom: 28, textAlign: 'center', fontFamily: 'var(--font-body)' }}>
             QS. AR-RUM : 21
           </p>
         </Reveal>
 
-        <div style={{ width: 60, height: '1px', background: 'rgba(201,146,42,0.2)', margin: '0 auto 20px' }} />
+        <div className="divider" style={{ marginBottom: 20 }} />
 
         <Reveal anim="up" delay="200ms">
           <p style={{
-            fontFamily: "'Cinzel Decorative',serif",
-            fontSize: 'clamp(16px,4vw,22px)',
-            letterSpacing: '0.1em', color: 'var(--champagne)',
-            textAlign: 'center', textShadow: '0 0 20px rgba(201,146,42,0.2)',
+            fontFamily: 'var(--font-script)',
+            fontSize: 'clamp(30px,8vw,44px)',
+            color: 'var(--deep-rose)',
+            textAlign: 'center',
+            lineHeight: 1.2,
           }}>
             {WEDDING.namasingkat1} &amp; {WEDDING.namasingkat2}
           </p>
-          <p style={{ fontSize: '10px', color: 'rgba(201,146,42,0.4)', letterSpacing: '0.3em', marginTop: 6, textAlign: 'center', fontFamily: 'Poppins,sans-serif', textTransform: 'uppercase' }}>
+          <p style={{ fontSize: '10px', color: 'rgba(139,75,87,0.6)', letterSpacing: '0.3em', marginTop: 10, textAlign: 'center', fontFamily: 'var(--font-body)', textTransform: 'uppercase' }}>
             08 . 06 . 2026
           </p>
         </Reveal>

@@ -167,7 +167,7 @@ function MusicPlayer({ triggerPlay = false }) {
           style={{
             width:        '52px',
             cursor:       'pointer',
-            background:   'rgba(109,83,137,0.25)',
+            background:   'rgba(196,112,127,0.2)',
             borderRadius: '2px',
             height:       '3px',
           }}
@@ -175,7 +175,7 @@ function MusicPlayer({ triggerPlay = false }) {
         >
           <div style={{
             height:       '3px',
-            background:   ended ? 'rgba(109,83,137,0.4)' : 'var(--secondary)',
+            background:   ended ? 'rgba(196,112,127,0.4)' : 'var(--rose)',
             borderRadius: '2px',
             width:        `${progress}%`,
             transition:   'width 0.5s linear',

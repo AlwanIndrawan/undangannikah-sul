@@ -1,6 +1,6 @@
 /* ============================================================
-   BRIDEGROOM SECTION — Frame Bugis Emas Maroon
-   Emi & Sul Wedding
+   BRIDEGROOM SECTION — Blush Pastel
+   Sul & Emi Wedding
    ============================================================ */
 
 .bg-section {
@@ -25,12 +25,12 @@
 }
 
 .bg-gelar {
-  font-family: 'Cinzel Decorative', serif;
-  font-size: 9px;
-  letter-spacing: 0.45em;
+  font-family: 'Jost', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.35em;
   text-transform: uppercase;
-  font-weight: 400;
-  color: rgba(201,146,42,0.75);
+  font-weight: 500;
+  color: var(--rose, #C4707F);
   margin-bottom: 12px;
 }
 
@@ -45,17 +45,8 @@
   position: absolute;
   inset: -20px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(201,146,42,0.1) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(201,166,107,0.16) 0%, transparent 70%);
   pointer-events: none;
-}
-
-.bg-frame-svg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 2;
 }
 
 .bg-photo-img {
@@ -69,7 +60,12 @@
   object-position: center top;
   border-radius: 50% / 43%;
   z-index: 1;
-  filter: brightness(0.9) saturate(1.1);
+  border: 3px solid var(--white, #FFFDFB);
+  box-shadow:
+    0 0 0 1px var(--gold, #C9A66B),
+    0 0 0 5px rgba(255,253,251,0.9),
+    0 0 0 6px var(--gold, #C9A66B),
+    0 18px 40px rgba(139,75,87,0.18);
 }
 
 .bg-photo-placeholder {
@@ -80,8 +76,8 @@
   width: 236px;
   height: 284px;
   border-radius: 50%;
-  background: linear-gradient(160deg, rgba(92,26,26,0.2), rgba(201,146,42,0.06));
-  border: 1px dashed rgba(201,146,42,0.2);
+  background: linear-gradient(160deg, rgba(246,220,226,0.7), rgba(201,166,107,0.12));
+  border: 1px dashed rgba(201,166,107,0.45);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -92,21 +88,21 @@
 
 .bg-placeholder-icon {
   font-size: 40px;
-  opacity: 0.35;
+  opacity: 0.4;
 }
 
 .bg-placeholder-label {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Jost', sans-serif;
   font-size: 10px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: rgba(201,146,42,0.4);
+  color: rgba(139,75,87,0.6);
 }
 
 .bg-placeholder-hint {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Jost', sans-serif;
   font-size: 9px;
-  color: rgba(245,223,160,0.2);
+  color: rgba(70,36,46,0.4);
   text-align: center;
   padding: 0 20px;
   line-height: 1.6;
@@ -114,47 +110,45 @@
 
 .bg-nama {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(24px, 5.5vw, 32px);
-  font-weight: 400;
+  font-size: clamp(26px, 5.5vw, 34px);
+  font-weight: 500;
   font-style: italic;
-  color: var(--ivory, #FAF6EE);
+  color: var(--deep-rose, #8B4B57);
   text-align: center;
   line-height: 1.2;
   margin-bottom: 4px;
-  text-shadow: 0 0 20px rgba(201,146,42,0.2);
 }
 
 .bg-nama-nick {
-  font-family: 'Cinzel Decorative', serif;
-  font-size: clamp(28px, 8vw, 40px);
-  color: var(--gold, #C9922A);
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(32px, 8vw, 44px);
+  color: var(--gold, #C9A66B);
   line-height: 1;
   margin-bottom: 8px;
-  text-shadow: 0 0 28px rgba(201,146,42,0.4);
 }
 
 .bg-divider {
   width: 48px;
   height: 1px;
-  background: rgba(201,146,42,0.35);
+  background: rgba(201,166,107,0.5);
   margin-bottom: 12px;
 }
 
 .bg-urutan {
-  font-family: 'Poppins', sans-serif;
-  font-size: 9px;
-  letter-spacing: 0.3em;
+  font-family: 'Jost', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: rgba(201,146,42,0.55);
+  color: rgba(139,75,87,0.65);
   margin-bottom: 6px;
   font-weight: 500;
 }
 
 .bg-ortu {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 14px;
+  font-size: 15px;
   font-style: italic;
-  color: rgba(250,246,238,0.55);
+  color: rgba(70,36,46,0.7);
   text-align: center;
   line-height: 1.7;
 }
@@ -170,23 +164,23 @@
   gap: 8px;
   margin-top: 14px;
   padding: 8px 18px;
-  background: rgba(201,146,42,0.06);
-  border: 1px solid rgba(201,146,42,0.25);
-  border-radius: 2px;
-  color: rgba(201,146,42,0.8);
-  font-family: 'Poppins', sans-serif;
-  font-size: 10px;
+  background: rgba(255,253,251,0.8);
+  border: 1px solid rgba(201,166,107,0.4);
+  border-radius: 30px;
+  color: var(--deep-rose, #8B4B57);
+  font-family: 'Jost', sans-serif;
+  font-size: 11px;
   font-weight: 500;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   text-decoration: none;
   transition: background 0.25s, border-color 0.25s, color 0.25s;
   cursor: pointer;
 }
 
 .bg-ig-btn:hover {
-  background: rgba(201,146,42,0.14);
-  border-color: rgba(201,146,42,0.55);
-  color: #e8b84b;
+  background: var(--gold, #C9A66B);
+  border-color: var(--gold, #C9A66B);
+  color: var(--white, #FFFDFB);
 }
 
 /* ── Separator "&" ── */
@@ -206,28 +200,26 @@
 }
 
 .bg-sep-line--top {
-  background: linear-gradient(to bottom, transparent, rgba(201,146,42,0.4));
+  background: linear-gradient(to bottom, transparent, rgba(201,166,107,0.5));
 }
 
 .bg-sep-line--bottom {
-  background: linear-gradient(to top, transparent, rgba(201,146,42,0.4));
+  background: linear-gradient(to top, transparent, rgba(201,166,107,0.5));
 }
 
 .bg-sep-ampersand {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(36px, 7vw, 52px);
-  font-style: italic;
-  color: var(--gold, #C9922A);
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(40px, 7vw, 56px);
+  color: var(--gold, #C9A66B);
   line-height: 1;
-  text-shadow: 0 0 20px rgba(201,146,42,0.3);
 }
 
 /* ── Gelar akademik ── */
 .bg-gelar-akademik {
-  font-family: 'Cinzel', serif;
-  font-size: 11px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 12px;
   letter-spacing: 0.2em;
-  color: rgba(201,146,42,0.5);
+  color: rgba(139,75,87,0.6);
   margin-bottom: 4px;
 }
 
@@ -253,12 +245,12 @@
   }
 
   .bg-sep-line--top {
-    background: linear-gradient(to right, transparent, rgba(201,146,42,0.4));
+    background: linear-gradient(to right, transparent, rgba(201,166,107,0.5));
   }
 
   .bg-sep-line--bottom {
-    background: linear-gradient(to left, transparent, rgba(201,146,42,0.4));
+    background: linear-gradient(to left, transparent, rgba(201,166,107,0.5));
   }
 
-  .bg-sep-ampersand { font-size: 36px; }
+  .bg-sep-ampersand { font-size: 44px; }
 }
